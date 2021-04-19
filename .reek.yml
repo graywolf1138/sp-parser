@@ -3,3 +3,13 @@ detectors:
     enabled: false
   TooManyInstanceVariables:
     enabled: false
+  TooManyStatements:
+    exclude:
+      - 'Parser#initialize'
+      - 'Parser#perform'
+  UncommunicativeVariableName:
+    exclude:
+      - 'Parser#perform'
+  NilCheck:
+    exclude:
+      - 'ValidatorService#self.valid?'

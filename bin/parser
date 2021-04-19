@@ -8,6 +8,7 @@ parser = Parser.new(
   most_visits: MostVisitsCounter,
   uniq_visits: UniqVisitsCounter,
   file_parser: FileParser,
+  validator: ValidatorService,
   file_line: Line,
   print_service: PrintService
 )

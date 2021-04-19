@@ -6,6 +6,7 @@ RSpec.describe Parser do
         most_visits: most_visits,
         uniq_visits: uniq_visits,
         file_parser: file_parser,
+        validator: validator_service,
         file_line: file_line,
         print_service: print_service
       ).perform
@@ -15,10 +16,12 @@ RSpec.describe Parser do
     let(:most_visits) { instance_spy('most_visits') }
     let(:uniq_visits) { instance_spy('uniq_visits') }
     let(:file_parser) { instance_spy('file_parser') }
+    let(:validator_service) { class_spy('validator') }
     let(:file_line) { class_spy('file_line') }
     let(:print_service) { instance_spy('print_service') }
 
     before do
+      allow(validator_service).to receive(:valid?).and_return(true)
       allow(print_service).to receive(:visits)
       allow(print_service).to receive(:uniq_visits)
     end

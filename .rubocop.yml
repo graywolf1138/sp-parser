@@ -1,0 +1,17 @@
+require:
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  UseCache: true
+  Exclude:
+    - Gemfile
+    - Gemfile.lock
+    - spec/spec_helper.rb
+Layout/LineLength:
+  Max: 140
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - spec/**/*.rb

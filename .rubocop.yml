@@ -15,3 +15,6 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Exclude:
     - spec/**/*.rb
+RSpec/DescribeClass:
+  Exclude:
+    - spec/**/*.rb

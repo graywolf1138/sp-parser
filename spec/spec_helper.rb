@@ -1,5 +1,4 @@
-require 'file_parser'
-require 'line'
+require 'parser'
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

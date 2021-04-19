@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-require_relative 'file_parser'
-require_relative 'line'
-require_relative 'most_visits_counter'
-require_relative 'uniq_visits_counter'
-require_relative 'print_service'
-require_relative 'validator_service'
+require_relative 'parser/file_parser'
+require_relative 'parser/line'
+require_relative 'parser/most_visits_counter'
+require_relative 'parser/uniq_visits_counter'
+require_relative 'parser/print_service'
+require_relative 'parser/validator_service'
 
 class Parser
   def initialize(file_path: nil, most_visits: MostVisitsCounter, uniq_visits: UniqVisitsCounter, **services)

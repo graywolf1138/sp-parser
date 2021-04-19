@@ -4,8 +4,8 @@ RSpec.describe Parser do
 
     let(:path) { File.join('spec', 'fixtures', 'sample.log') }
 
-    it 'returns visits array' do
-      expect(parser).to be_an Array
+    it 'stdouts to output' do
+      expect { parser }.to output.to_stdout
     end
   end
 end

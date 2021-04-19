@@ -3,4 +3,9 @@
 
 require_relative '../lib/parser'
 
-Parser.new(file_path: ARGV.first).perform
+parser = Parser.new(
+  file_path: ARGV.first,
+  most_visits: MostVisitsCounter,
+  uniq_visits: UniqVisitsCounter
+)
+parser.perform

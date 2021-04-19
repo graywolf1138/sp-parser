@@ -7,18 +7,18 @@ require_relative 'uniq_visits_counter'
 require_relative 'print_service'
 
 class Parser
-  def initialize(file_path: nil, most_visits: MostVisitsCounter, uniq_visits: UniqVisitsCounter, print_service: PrintService)
+  def initialize(file_path: nil, most_visits: MostVisitsCounter, uniq_visits: UniqVisitsCounter, **services)
     @file_path = file_path
     @most_visits = most_visits
     @uniq_visits = uniq_visits
-    @file_parser = FileParser
-    @file_line = Line
-    @print_service = print_service.new
+    @file_parser = services[:file_parser]
+    @file_line = services[:file_line]
+    @print_service = services[:print_service]
   end
 
   def perform
-    print_service.visits(count(most_visits))
-    print_service.uniq_visits(count(uniq_visits))
+    print_service.new.visits(count(most_visits))
+    print_service.new.uniq_visits(count(uniq_visits))
   end
 
   private

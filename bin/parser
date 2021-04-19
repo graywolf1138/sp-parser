@@ -6,6 +6,10 @@ require_relative '../lib/parser'
 parser = Parser.new(
   file_path: ARGV.first,
   most_visits: MostVisitsCounter,
-  uniq_visits: UniqVisitsCounter
+  uniq_visits: UniqVisitsCounter,
+  file_parser: FileParser,
+  file_line: Line,
+  print_service: PrintService
 )
+
 parser.perform

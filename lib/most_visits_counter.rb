@@ -6,16 +6,12 @@ class MostVisitsCounter
   end
 
   def call
-    sort_counted_visits
+    count_visits.sort_by { |_key, value| value }.reverse.to_h
   end
 
   private
 
   attr_reader :visits
-
-  def sort_counted_visits
-    count_visits.sort_by { |_key, value| value }.reverse.to_h
-  end
 
   def count_visits
     group_visits.map { |uri, ip_range| [uri, ip_range.count(&:ip)] }
